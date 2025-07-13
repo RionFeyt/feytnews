@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Feyt NEWS Forecast Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 2rem;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 1rem;
+        }
+
+        form {
+            margin-bottom: 2rem;
+        }
+
+        .button-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .button-option {
+            background-color: #ffffff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .button-option:hover {
+            background-color: #e0f7fa;
+            border-color: #26a69a;
+        }
+
+        .button-option.active {
+            background-color: #26a69a;
+            color: #fff;
+            border-color: #26a69a;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 2rem;
+        }
+
+        .download-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            background-color: #26a69a;
+            color: #fff;
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background-color: #00796b;
+        }
+
+        .forecast-output {
+            background: #fff;
+            padding: 2rem;
+            margin-top: 2rem;
+            border-radius: 10px;
+            text-align: left;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌍 Feyt NEWS Forecast Dashboard</h1>
+    <p>Select a <strong>tone</strong> and <strong>timeframe</strong> to generate your forecast.</p>
+
+    <form method="POST" id="forecast-form">
+        <div>
+            <h3>Choose a Tone</h3>
+            <div class="button-group" id="tone-buttons">
+                {% for key, label in tones.items() %}
+                    <button type="button" class="button-option" onclick="selectOption('tone', '{{ key }}')">{{ label }}</button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div>
+            <h3>Choose a Timeframe</h3>
+            <div class="button-group" id="timeframe-buttons">
+                {% for key, label in timeframes.items() %}
+                    <button type="button" class="button-option" onclick="selectOption('timeframe', '{{ key }}')">{{ label }}</button>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Hidden Inputs -->
+        <input type="hidden" name="tone" id="tone-input">
+        <input type="hidden" name="timeframe" id="timeframe-input">
+    </form>
+
+    {% if forecast_html %}
+        <div class="forecast-output">
+            {{ forecast_html | safe }}
+            {% if file_path %}
+                <a href="{{ url_for('download', path=file_path) }}" class="download-btn">⬇ Download Forecast</a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <script>
+        let selectedTone = null;
+        let selectedTimeframe = null;
+
+        function selectOption(type, value) {
+            if (type === 'tone') {
+                selectedTone = value;
+                document.getElementById('tone-input').value = value;
+                setActive('tone-buttons', value);
+            } else if (type === 'timeframe') {
+                selectedTimeframe = value;
+                document.getElementById('timeframe-input').value = value;
+                setActive('timeframe-buttons', value);
+            }
+
+            // Submit if both are selected
+            if (selectedTone && selectedTimeframe) {
+                document.getElementById('forecast-form').submit();
+            }
+        }
+
+        function setActive(groupId, selectedKey) {
+            const buttons = document.getElementById(groupId).getElementsByClassName('button-option');
+            for (let btn of buttons) {
+                btn.classList.remove('active');
+                if (btn.getAttribute('onclick').includes(`'${selectedKey}'`)) {
+                    btn.classList.add('active');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

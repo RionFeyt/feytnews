@@ -1,0 +1,63 @@
+<h2>📆 Yearly Forecast - Sunday, July 13, 2025</h2><h3>Tone: 😶 Neutral</h3><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yearly Forecast</title>
+</head>
+<body>
+    <h2>Yearly Forecast Analysis</h2>
+
+    <h3>Economy</h3>
+    <ul>
+        <li>The global economy is expected to experience modest growth of around 3% due to ongoing uncertainties.</li>
+        <li>Inflation rates are likely to remain stable, supported by central bank policies and subdued demand.</li>
+    </ul>
+    
+    <h3>Job Market</h3>
+    <ul>
+        <li>Job creation in the tech and healthcare sectors will continue to outpace other industries.</li>
+        <li>Remote work opportunities will remain prevalent, leading to a shift in job preferences towards flexibility.</li>
+    </ul>
+
+    <h3>Consumer Behavior</h3>
+    <ul>
+        <li>Online shopping will continue to dominate retail sales, prompting traditional retailers to enhance their digital presence.</li>
+        <li>Consumers will prioritize sustainable and ethical products, driving companies to adopt more responsible practices.</li>
+    </ul>
+
+    <h3>Technology</h3>
+    <ul>
+        <li>Advancements in artificial intelligence and automation will reshape industries, leading to concerns about job displacement.</li>
+        <li>5G technology will proliferate, enabling faster connectivity and accelerating the development of IoT applications.</li>
+    </ul>
+
+    <h3>Environment</h3>
+    <ul>
+        <li>Climate change concerns will drive governments and businesses to invest in renewable energy and sustainable practices.</li>
+        <li	Extreme weather events will continue to impact supply chains, necessitating greater resilience measures.</li>
+    </ul>
+
+    <h3>Geopolitics</h3>
+    <ul>
+        <li	Trade tensions between major economies may persist, leading to shifts in global supply chains.</li>
+        <li	Regional conflicts and geopolitical uncertainties could impact international investments and trade agreements.</li>
+    </ul>
+
+    <h3>Health/Public Safety</h3>
+    <ul>
+        <li	Continued focus on public health infrastructure will drive investments in healthcare systems and disease prevention.</li>
+        <li	Concerns about cybersecurity threats will lead to increased spending on digital security measures.</li>
+    </ul>
+
+    <h2>Summary of Sentiment Trends</h2>
+    <p>The overall sentiment trends are mixed, reflecting a blend of opportunities and challenges across various sectors. 📊</p>
+
+    <h2>Next Month Prediction</h2>
+    <p>For the next month, we anticipate continued volatility in financial markets as investors react to changing economic indicators and geopolitical developments.</p>
+
+    <h2>Next Year Prediction</h2>
+    <p>Looking ahead to the next year, we expect a gradual recovery in economic growth as global uncertainties ease and businesses adapt to the evolving landscape.</p>
+
+</body>
+</html>
