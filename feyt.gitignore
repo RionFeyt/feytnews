@@ -1,3 +1,41 @@
+# Byte-compiled / cache files
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
 .env
+
+# Environment files
+.env.*
+.envrc
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VSCode
+.vscode/
+
+# Python egg files
+*.egg
+*.egg-info/
+
+# IDE folders
+.idea/
+
+# Jupyter notebooks (optional)
+*.ipynb_checkpoints
+
+# Pytest cache
+.pytest_cache/
+
+# Forecast storage
+/forecasts/
+latest_forecast.txt
+
